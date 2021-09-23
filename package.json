@@ -1,0 +1,16 @@
+{
+  "name": "gutenberg-team-block-cgb-guten-block",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build",
+    "eject": "cgb-scripts eject"
+  },
+  "dependencies": {
+    "cgb-scripts": "1.23.1",
+    "cssx": "^5.2.1",
+    "font-picker-react": "^3.5.2",
+    "styled-components": "^5.3.1"
+  }
+}

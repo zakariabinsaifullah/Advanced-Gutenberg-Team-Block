@@ -1,0 +1,145 @@
+.wp-block-bcb-team-grid {
+  &.gtm_team_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .gtm_single_team_member {
+      margin: 0 10px 30px;
+      .team_member_photo {
+        width: 100%;
+        height: auto;
+        line-height: 0;
+      }
+
+      .team_member_photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .team_member_content {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .team_member_content h2,
+      .team_member_content h4,
+      .team_member_content p {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      h2.member_name,
+      h4.member_position {
+        font-weight: 500;
+      }
+
+      .social_profiles a {
+        text-decoration: none !important;
+        display: inline-block;
+        padding: 0 3px;
+        line-height: 1;
+        transition: 0.1s;
+      }
+      .social_profiles a:hover {
+        opacity: 0.75;
+      }
+      .social_profiles a span {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 1.3;
+      }
+    }
+  }
+}
+
+// Side by Side Style
+.wp-block-bcb-team-grid.side_by_Side {
+  .gtm_single_team_member {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    .team_member_photo {
+      width: 30%;
+      margin-right: 5%;
+    }
+    .team_member_content {
+      width: 65%;
+      text-align: left;
+    }
+  }
+}
+
+// Side by Side Style
+.wp-block-bcb-team-grid.hover_style {
+  .gtm_single_team_member {
+    position: relative;
+  }
+  .team_member_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding: 15px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .gtm_single_team_member:hover .team_member_content {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+  .social_profiles {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -73px;
+  }
+}
+
+// // Reponsive Layout
+// // Small Device
+@media screen and (max-width: 767px) {
+  .wp-block-bcb-team-grid {
+    &.gtm_team_grid {
+      @for $i from 1 through 5 {
+        &.mcols-#{$i} {
+          .wp-block-bcb-team-member {
+            width: calc(100% /#{$i} - 20px);
+          }
+        }
+      }
+    }
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wp-block-bcb-team-grid {
+    &.gtm_team_grid {
+      @for $i from 1 through 5 {
+        &.tcols-#{$i} {
+          .wp-block-bcb-team-member {
+            width: calc(100% /#{$i} - 20px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 1025px) {
+  .wp-block-bcb-team-grid {
+    &.gtm_team_grid {
+      @for $i from 1 through 5 {
+        &.dcols-#{$i} {
+          .wp-block-bcb-team-member {
+            width: calc(100% /#{$i} - 20px);
+          }
+        }
+      }
+    }
+  }
+}

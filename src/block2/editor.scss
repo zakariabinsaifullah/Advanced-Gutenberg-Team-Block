@@ -1,0 +1,129 @@
+// Hide Single Member Block
+[aria-label="Team Blocks"] {
+  .block-editor-block-types-list__list-item:first-child {
+    display: none;
+  }
+}
+.setting_tab.setting_active {
+  background-color: #fff !important;
+  border-bottom: none !important;
+  color: #a32a46 !important;
+  border-top-color: #a32a46 !important;
+}
+// Editor Style
+.p10 {
+  padding: 10px;
+}
+.columns_wrapper {
+  display: flex;
+}
+
+.devices_list {
+  margin-left: 15px;
+}
+
+.devices_list span {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.colContent,
+.fontContent {
+  display: none;
+}
+
+.col-tab-content {
+  margin-top: 5px;
+}
+
+// fonts picker
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+div[id^="font-picker"] .dropdown-icon.finished::before {
+  border-top-color: #7e7e7e !important;
+}
+.font_family_picker {
+  display: flex;
+  align-items: center;
+}
+
+.fonts_title {
+  width: 30%;
+  margin-right: 5px;
+}
+
+div#font-picker {
+  width: 70%;
+  box-shadow: none !important;
+}
+
+div#font-picker button.dropdown-button {
+  background: none;
+  border: 1px solid #e0e0e0;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+ul.font-list {
+  background: #fff !important;
+  border-top: 0;
+  box-shadow: none !important;
+  border-left: 1px solid #e0e0e0;
+}
+
+// Settings Tab
+.settings_tabs {
+  display: flex;
+  align-items: center;
+}
+.setting_content {
+  display: none;
+}
+.settings_tabs button.setting_tab {
+  width: 100%;
+  border: none;
+  padding: 15px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.settings_tabs button.setting_tab:hover {
+  background: #fff;
+}
+
+.settings_tabs button.setting_tab:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+// Editor Content Styles
+.wp-block-bcb-team-grid {
+  &.gtm_team_grid {
+    display: block;
+
+    .block-editor-block-list__layout {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    @for $i from 1 through 5 {
+      &.dcols-#{$i} {
+        [data-type="bcb/team-member"] {
+          width: calc(100% /#{$i} - 20px);
+        }
+      }
+    }
+  }
+}
